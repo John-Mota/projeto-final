@@ -4,6 +4,7 @@ import { TodoListComponent } from "./list/todo-list.component";
 import { RegisterTasksComponent } from "./register-tasks/register-tasks.component";
 import { TaskEditingComponent } from "./task-editing/task-editing.component";
 
+
 export const TaskRoutes: Routes = [
     { 
         path: 'tarefas', 
@@ -14,7 +15,7 @@ export const TaskRoutes: Routes = [
         component: TodoListComponent
     },
     { 
-        path: 'tasks/register-tasks', 
+        path: 'tarefas/register-tasks', 
         component: RegisterTasksComponent
     },
     {

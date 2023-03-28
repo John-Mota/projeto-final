@@ -42,11 +42,13 @@ export class TasksService {
     localStorage['tarefas'] = JSON.stringify(tasks);
   }
 
-  public changeStatus(id: number): void {
-    const tasks: Tasks[] = this.listAll();
-    tasks.forEach((obj, index, objs) => {
-      objs[index].concluida = !obj.concluida;
+  changeStatus(id: number): void {
+    const tarefas: Tasks[] = this.listAll();
+    tarefas.forEach((obj, index, objs) => { 
+      if (id === obj.id) {
+        objs[index].concluida = !obj.concluida;
+      }
     });
-    localStorage['tarefas'] = JSON.stringify(tasks);
+    localStorage['tarefas'] = JSON.stringify(tarefas);
   }
 }

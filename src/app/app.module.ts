@@ -9,6 +9,7 @@ import { DashboardModule } from './projetos/dashboard/dashboard.module';
 import { JogoDaVelhaModule } from './projetos/jogo-da-velha/jogo-da-velha.module';
 import { TasksModule } from './projetos/tasks/tasks.module';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 

@@ -32,7 +32,7 @@ export class TodoListComponent implements OnInit {
   }
 
   public alterarStatus(task: Tasks): void {
-    //complete
+    task.concluida = !task.concluida;
     if(confirm('Deseja alterar a tarefa "' + task.nome + '"?')) {
       this.tasksService.changeStatus(task.id);
       this.tasks = this.lisarTodos();

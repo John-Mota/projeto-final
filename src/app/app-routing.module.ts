@@ -6,7 +6,7 @@ import { DashboardRoutes } from './projetos/dashboard/dashboard-routing.module';
 import { CalculadoraRoutes } from './projetos/calculator/calculator.routing.module';
 import { ConversorRoutes } from './projetos/conversor-de-moedas/conversor.routing.module';
 import { JogoDaVelhaRoutes } from './projetos/jogo-da-velha/jogoDavelha.routing.module';
-import { TasksRoutes } from './projetos/tasks/task.routing.module';
+import { TaskRoutes } from './projetos/tasks/tasks-routing-module';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
@@ -14,7 +14,7 @@ const routes: Routes = [
   ...CalculadoraRoutes,
   ...ConversorRoutes,
   ...JogoDaVelhaRoutes,
-  ...TasksRoutes
+  ...TaskRoutes
 ];
 
 @NgModule({
