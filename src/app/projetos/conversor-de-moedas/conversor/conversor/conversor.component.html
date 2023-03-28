@@ -1,0 +1,76 @@
+<br />
+<div class="alert alert-danger" 
+	role="alert"
+    *ngIf="possuiError">
+	Erro obtendo dados. Tente novamente.
+</div>
+<div class="panel panel-success">
+	<div class="panel-heading">
+		Selecione a moeda a ser convertida
+	</div>
+	<div class="panel-body text-center">
+        <form #conversaoForm="ngForm" class="form-inline">
+	        <div class="container">
+                <div class="row" >
+                    <div class="col-auto">
+                        <input
+                            type="text"
+                            name="valor"
+                            class="form-control text-right"
+                            placeholder="0"
+                            [(ngModel)]="conversao.valor"
+                            numero
+                            required>
+                    </div>
+                    <div class="col-auto">
+                        <select
+                            name="moedaDe"
+                            class="form-control"
+                            [(ngModel)]="conversao.moedaDe"
+                            required>
+                            <option *ngFor="let moeda of moeda"
+                            [value]="moeda.sigla">
+                            {{moeda.sigla}} - {{moeda.descricao}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="col-auto">
+                        <span class="glyphicon glyphicon-arrow-right"
+                            aria-hidden="true"></span>
+                    </div>
+                    <div class="col-auto">
+                        <select
+                            name="moedaPara"
+                            class="form-control"
+                            [(ngModel)]="conversao.moedaPara"
+                            required>
+                            <option
+                            *ngFor="let moeda of moeda"
+                            [value]="moeda.sigla">
+                            {{moeda.sigla}} - {{moeda.descricao}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="col-auto">
+                        <input
+                            type="submit"
+                            value="Converter"
+                            class="btn btn-success"
+                            data-bs-toggle="modal"
+                            data-bs-target="#modalCotacao"
+                            (click)="converter()"
+                            [disabled]="!conversaoForm.form.valid">
+                    </div>
+                </div>
+            </div>
+        </form>
+        <hr>
+	 </div>
+     <modal-cotacao
+        [id]="'modalCotacao'"
+        [conversaoResponse]="conversaoResponse"
+        [conversao]="conversao"
+        (onConfirm)="init()">
+    </modal-cotacao>
+</div>
+

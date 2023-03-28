@@ -1,0 +1,17 @@
+.bg-color {
+    background-color: #272727;
+    
+}
+
+.bg-color a {
+    color: whitesmoke;
+}
+
+.dropdown-menu {
+    background-color: #ccc;
+}
+
+.dropdown-menu li a {
+    color: #272727;
+}
+
