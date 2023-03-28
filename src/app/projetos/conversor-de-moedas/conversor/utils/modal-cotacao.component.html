@@ -24,15 +24,15 @@
           {{ conversao.valor }}
           {{ conversao.moedaDe }}
           =
-          {{ valorConvertido | currency : 'BRL' }}
-          {{ conversao.moedaPara }}
+          {{ valorConvertido | currency: 'BRL'}}
+          
         </h2>
 			<p>
         1 {{ conversao.moedaPara }} =
-        {{ cotacaoPara| currency : 'BRL' }} {{ conversao.moedaDe }}
+        {{ cotacaoPara }} 
         / 
         1 {{ conversao.moedaDe }}  = 
-        {{ cotacaoDe }} {{ conversao.moedaPara }}
+        {{ cotacaoDe }} 
       </p>
 		</div>
       </div>

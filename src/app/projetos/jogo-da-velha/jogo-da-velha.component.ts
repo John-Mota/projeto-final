@@ -37,7 +37,8 @@ export class JogoDaVelhaComponent {
   
    // Inicializa os dados de um novo jogo.
    
-  public iniciarJogo(): void {
+  public iniciarJogo($event: any): void {
+    $event.preventDefault();
   	this.jogoDaVelhaService.iniciarJogo();
   }
 
@@ -82,7 +83,8 @@ export class JogoDaVelhaComponent {
   
   // Inicia um novo jogo.
    
-  public novoJogo(): void {
+  public novoJogo($event): void {
+    $event.preventDefault();
   	this.jogoDaVelhaService.novoJogo();
   }
 }

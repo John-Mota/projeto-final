@@ -18,21 +18,11 @@ export class ConversorService {
   constructor( private http: HttpClient) { }
 
   // Realiza a chamada para a API de conversão de moedas.
-  public converter(conversao: Conversao): Observable<ConversaoResponse> {
-    let params = `?amount=${conversao.valor}&from=${conversao.moedaDe}&to=${conversao.moedaPara}`;
+  converter(conversao: Conversao): Observable<ConversaoResponse> {
+    const params = `?base=${conversao.moedaDe}&symbols=${conversao.moedaPara}`;
 
     return this.http
-    .get(this.BASE_URL + params)
-    .pipe (
-      map(response => response as ConversaoResponse),
-      catchError(error => {
-        return of({
-          base: '',
-          date: '',
-          rates: {}
-        }as ConversaoResponse); 
-      })
-    )  
+      .get<ConversaoResponse>(this.BASE_URL + params);
   }
 
   // Retorna a cotação para dado uma response.

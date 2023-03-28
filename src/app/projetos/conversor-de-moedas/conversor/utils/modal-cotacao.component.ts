@@ -29,8 +29,9 @@ export class ModalCotacaoComponent implements OnInit {
       return '0';
     }
 
-    return (this.conversao.valor * this.conversaoResponse.rates[this.conversao.moedaPara])
-    .toFixed(2);
+    return (this.conversao.valor * 
+      this.conversaoResponse.rates[this.conversao.moedaPara])
+        .toFixed(2);
   }
 
   get cotacaoPara(): number {
