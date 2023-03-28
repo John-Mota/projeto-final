@@ -14,12 +14,12 @@
             Projetos
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Dashboard</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/dashboard']">Dashboard</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Jogo da velha</a></li>
-            <li><a class="dropdown-item" href="#">Conversor de Moedas</a></li>
-            <li><a class="dropdown-item" href="#">Gerenciador de terefas</a></li>
-            <li><a class="dropdown-item" href="#">Calculadora</a></li>
+            <li><a class="dropdown-item"  [routerLink]="['/jogo-da-velha']">Jogo da velha</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/conversor']">Conversor de Moedas</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/jogo-da-velha']">Gerenciador de terefas</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/jogo-da-velha']">Calculadora</a></li>
             
           </ul>
         </li>
@@ -29,5 +29,7 @@
   </div>
 </nav>
 
-
+<a [routerLink]="['/dashboard']">
+  
+</a>
 <router-outlet></router-outlet>
